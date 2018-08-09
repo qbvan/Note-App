@@ -84,6 +84,7 @@ class CoreTableViewController: UITableViewController, NSFetchedResultsController
         cell.cellTitle.text = item.title
         cell.cellDescription.text = item.descriptionText
         cell.cellImage.image = UIImage(data: (item.image)! as Data)
+        cell.cellImage.layer.cornerRadius = cell.cellImage.frame.width / 2
         
 //        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longTap))
 //        cell.addGestureRecognizer(longPressGesture)

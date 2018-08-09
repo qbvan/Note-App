@@ -17,17 +17,30 @@ class AddViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var descriptionField: UITextField!
     @IBOutlet weak var imageField: UIImageView!
+    @IBOutlet weak var libButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var cameraButton: UIButton!
+    
+    @IBOutlet weak var editTitle: UILabel!
+    
+    
+    
     //using this variable to send data with segue has name "edit"
     var item: Entity? = nil
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        libButton.layer.cornerRadius = 5
+        saveButton.layer.cornerRadius = 5
+        cameraButton.layer.cornerRadius = 5
         
         //check if item is nil . change the navigation title equal to add new data
         if item == nil {
             self.navigationItem.title = "Add new task"
+            editTitle.text = "What do you want to do?"
         } else {
             self.navigationItem.title = item?.title
+            editTitle.text = "Edit"
             
             titleField.text = item?.title
             descriptionField.text = item?.descriptionText
